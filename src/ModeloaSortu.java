@@ -20,6 +20,7 @@ public class ModeloaSortu {
 
             String modelPath = args[2];
 
+
             // NaiveBayes eredua entrenatu
             NaiveBayes model = new NaiveBayes();
             model.buildClassifier(data);
@@ -39,6 +40,7 @@ public class ModeloaSortu {
             model.buildClassifier(trainData);
             Evaluation holdOut = new Evaluation(data);
             holdOut.evaluateModel(model, testData);
+
 
             // Emaitzak gorde
             fw.write("K-fcv:\n" + kfcv.toMatrixString() + "\n");
